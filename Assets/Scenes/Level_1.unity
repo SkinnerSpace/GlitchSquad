@@ -1306,6 +1306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1470142487334672112, guid: c3d3b08a202ec1c45a8b29dc1f8b1ad4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2809,6 +2813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Doors
       objectReference: {fileID: 0}
+    - target: {fileID: 1470142487334672112, guid: c3d3b08a202ec1c45a8b29dc1f8b1ad4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3792,38 +3800,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: musicSounds.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.data[4].Name
-      value: Breathe1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: cd6a7533305334246b511722d763d551, type: 3}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.data[5].Name
-      value: Breathe2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 28dfd40bfa845474584d8e2df5b74df5, type: 3}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.data[6].Name
-      value: Breathe3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: sfxSounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8e0d3d937d98bbe429c301f5b46ef65d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

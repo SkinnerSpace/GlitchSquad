@@ -57,6 +57,18 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 57f9406cfde0013449d3285ebb1576f6, type: 3}
   - Name: Action3
     clip: {fileID: 8300000, guid: 3b407d9f2f0acd24db1274eda3cbbdca, type: 3}
+  - Name: Breathe1
+    clip: {fileID: 8300000, guid: cd6a7533305334246b511722d763d551, type: 3}
+  - Name: Breathe2
+    clip: {fileID: 8300000, guid: 28dfd40bfa845474584d8e2df5b74df5, type: 3}
+  - Name: Breathe3
+    clip: {fileID: 8300000, guid: 8e0d3d937d98bbe429c301f5b46ef65d, type: 3}
+  - Name: Close1
+    clip: {fileID: 8300000, guid: 5893ce056e876264bbe387d9d8b18128, type: 3}
+  - Name: Close2
+    clip: {fileID: 8300000, guid: 174c909de3e4f8f42921562de9ac295f, type: 3}
+  - Name: Close3
+    clip: {fileID: 8300000, guid: f577d1cc110fd284a86ff99cc514ae93, type: 3}
   musicSource: {fileID: 8382515132175506214}
   sfxSource: {fileID: 946049778815586010}
   ambient: {fileID: 4245115953288719129}
