@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -8,13 +7,21 @@ public class Player : MonoBehaviour
     public Transform middleCircle;
 
     public float moveSpeed = 5f;
+    public float slowSpeed = 2f;
     public float turnSpeed = 200f;
     public float impactForce = 10f;
     public float maxImpact = 4f;
     public float maxVelocityMagnitude = 5f;
 
+    private float currentSpeed;
+    private bool isSlow;
 
     private Rigidbody2D rb;
+
+    public void SetIsSlow(bool value)
+    {
+        isSlow = value;
+    }
 
     void Start()
     {
@@ -30,13 +37,13 @@ public class Player : MonoBehaviour
         // Create a movement vector
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
 
+        currentSpeed = Mathf.Lerp(currentSpeed, isSlow ? slowSpeed : moveSpeed, Time.deltaTime * 5);
+
         // Apply force to the rigidbody for movement
-        rb.AddForce(movement * moveSpeed);
+        rb.AddForce(movement * currentSpeed);
 
         // Prevent angular motion
         /*rb.angularVelocity = 0f;*/
-
-
     }
 
     private void LateUpdate()
