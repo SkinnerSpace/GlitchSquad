@@ -21,11 +21,13 @@ namespace Bubbles
         [SerializeField]
         private float followSpeed;
 
+        private BubblesRoot _root;
         private TrailRenderer _target;
         private int _index;
         private Vector3 _initPosition;
         private Vector3 _targetPosition;
         private Vector3 _pushDirection;
+        private bool _hasBeenConnected;
 
         public int Index => _index;
         public bool IsConnected { get; private set; }
@@ -41,11 +43,12 @@ namespace Bubbles
             }
         }
 
-        public void Connect(TrailRenderer trailRenderer, int followIndex)
+        public void Connect(BubblesRoot root, TrailRenderer trailRenderer, int followIndex)
         {
             IsConnected = true;
             _target = trailRenderer;
             _index = followIndex;
+            _root = root;
         }
 
         public void Consume()
@@ -99,8 +102,14 @@ namespace Bubbles
             _pushDirection = direction.normalized;
         }
 
-        public void Pop()
+        public void Disconnect()
         {
+            _initPosition = transform.position;
+            _targetPosition = transform.position;
+            IsConnected = false;
+            _target = null;
+            _index = -1;
+            _root.Disconnect(this);
         }
     }
 }

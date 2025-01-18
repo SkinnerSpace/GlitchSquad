@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -25,7 +24,7 @@ namespace Bubbles
 
         private void Start()
         {
-            tail.Connect(trail, 0);
+            tail.Connect(this, trail, 0);
             tail.transform.SetParent(null);
         }
 
@@ -49,7 +48,7 @@ namespace Bubbles
                 if (!IsFull)
                 {
                     Bubble lastBubble = _bubbles.LastOrDefault();
-                    bubble.Connect(trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
+                    bubble.Connect(this, trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
                     _bubbles.Add(bubble);
                 }
             }
@@ -68,6 +67,16 @@ namespace Bubbles
                 {
                     bubble.Push(bubble.transform.position - transform.position);
                 }
+            }
+        }
+
+        public void Disconnect(Bubble bubble)
+        {
+            _bubbles.Remove(bubble);
+            Bubble next = _bubbles.FirstOrDefault(item => item.Index < bubble.Index);
+            if (next)
+            {
+                next.Disconnect();
             }
         }
     }
