@@ -4341,9 +4341,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1159344258130275200, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+      propertyPath: finalAnimator
+      value: 
+      objectReference: {fileID: 1529100489}
     - target: {fileID: 2113009196144657277, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759300828555130591, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4710612721812073307, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
       propertyPath: fader
@@ -4429,6 +4437,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5974049680890732013, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6712874505802001287, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+      propertyPath: m_Maskable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6712874505802001287, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351454323478017013, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8562257506171988643, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4444,6 +4468,11 @@ PrefabInstance:
 --- !u!224 &1529100488 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5345777575771924193, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
+  m_PrefabInstance: {fileID: 1529100487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1529100489 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2674656550127006814, guid: 9f261b08f2b46734bb80b72ac056bff5, type: 3}
   m_PrefabInstance: {fileID: 1529100487}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1689190944
@@ -5543,6 +5572,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
+      propertyPath: sfxSounds.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
+      propertyPath: musicSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
+      propertyPath: sfxSounds.Array.data[11].Name
+      value: Final
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
+      propertyPath: sfxSounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 833bf05ddc0922340bef854184df4715, type: 3}
+    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
+      propertyPath: musicSounds.Array.data[0].Name
+      value: Final
+      objectReference: {fileID: 0}
+    - target: {fileID: 8022166991745419480, guid: e1da4392081253f43a505e78207639d9, type: 3}
+      propertyPath: musicSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 833bf05ddc0922340bef854184df4715, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

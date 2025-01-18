@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,13 @@ using UnityEngine.SceneManagement;
 public class SceneManage : MonoBehaviour
 {
     public Animator fader;
+
+    public static SceneManage instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void LoadScene(int sceneInt)
     {
@@ -34,6 +42,17 @@ public class SceneManage : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+    public bool IsTheLastLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 
     public void RestartGame()
     {
