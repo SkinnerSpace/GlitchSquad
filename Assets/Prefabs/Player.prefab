@@ -237,6 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8599d046084e44bbb8fc78982054df99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushDistance: 0
+  pushSpeed: 0
   spriteRenderer: {fileID: 0}
   sprites: []
   followSpeed: 12
@@ -247,7 +249,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2125378994816561191}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -388,6 +390,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8599d046084e44bbb8fc78982054df99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushDistance: 0
+  pushSpeed: 0
   spriteRenderer: {fileID: 0}
   sprites: []
   followSpeed: 12
