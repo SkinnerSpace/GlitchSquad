@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Organ : MonoBehaviour
 {
+    public OrganType organType;
     public int currentHealth;
     public int maxHealth;
     [SerializeField] private float consumeTimeStep;
@@ -23,4 +24,11 @@ public class Organ : MonoBehaviour
             lastConsumeTime = Time.time;
         }
     }
+}
+
+public enum OrganType
+{
+    Heart,
+    Liver,
+    Stomach
 }
