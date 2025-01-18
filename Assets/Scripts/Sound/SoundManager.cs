@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     public SoundSource[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
+    public AudioSource ambient;
+
     private void Awake()
     {
         if (Instance == null)
@@ -19,6 +21,11 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        /*if (ambient != null)
+        {
+            ambient.Play();
+        }*/
     }
 
     private void Start()
