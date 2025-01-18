@@ -35,12 +35,18 @@ public class UIManager : MonoBehaviour
         organFinishCount++;
         if (organFinishCount >= organList.Count)
         {
+            winGame.SetActive(true);
+
+            SoundManager.Instance.PlaySfx("Victory");
+
             StartCoroutine(Finish());
 
             IEnumerator Finish()
             {
                 yield return new WaitForSeconds(2f);
                 winGame.SetActive(true);
+                
+
             }
         }
     }
