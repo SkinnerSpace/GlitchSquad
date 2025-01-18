@@ -1,0 +1,18 @@
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Dd]ebug/
+[Aa]ssets/AssetStoreTools*
+
+# Ignore user-specific files
+userSettings/
+
+# Ignore Visual Studio files
+.vscode/
+*.sln
+*.csproj
+*.userprefs
