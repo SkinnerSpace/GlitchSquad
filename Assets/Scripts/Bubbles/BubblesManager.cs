@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Bubbles;
@@ -17,11 +15,19 @@ public class BubblesManager : MonoBehaviour
 
     private float time;
 
-    public static BubblesManager Manager;
+    private static BubblesManager instance;
 
-    private void OnEnable()
+    public static BubblesManager Manager
     {
-        Manager = this;
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<BubblesManager>();
+            }
+
+            return instance;
+        }
     }
 
     private void Update()

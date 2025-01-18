@@ -48,7 +48,8 @@ namespace Bubbles
         public void Respawn(Vector2 position)
         {
             transform.position = position;
-
+            _initPosition = position;
+            _targetPosition = position;
             gameObject.SetActive(true);
             IsConnected = false;
             _target = null;
