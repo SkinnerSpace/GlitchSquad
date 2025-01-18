@@ -36,10 +36,5 @@ namespace Bubbles
                 _bubbles.Add(bubble);
             }
         }
-
-        private void Update()
-        {
-            trail.time = Mathf.Abs(1f / root.velocity.magnitude);
-        }
     }
 }
