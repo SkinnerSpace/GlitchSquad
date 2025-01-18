@@ -277,6 +277,7 @@ GameObject:
   - component: {fileID: 5027199960527364832}
   - component: {fileID: 255294780407383398}
   - component: {fileID: 683085990004049652}
+  - component: {fileID: 157173808865837761}
   m_Layer: 0
   m_Name: Stomach
   m_TagString: Organ
@@ -464,6 +465,19 @@ MonoBehaviour:
   fullSprite: {fileID: 21300000, guid: eecec18d37decc943b2164b2a4eb60c3, type: 3}
   firstMeetSprites:
   - {fileID: 21300000, guid: b8d6ae210c4c79e45944098e2236e6cc, type: 3}
+--- !u!114 &157173808865837761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863761576860136258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e486eb2fe621de4bb23b0042895d04a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newMaxCount: 7
 --- !u!1 &5667602684497308507
 GameObject:
   m_ObjectHideFlags: 0
