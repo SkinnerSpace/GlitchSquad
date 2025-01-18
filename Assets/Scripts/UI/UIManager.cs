@@ -36,6 +36,8 @@ public class UIManager : MonoBehaviour
         if (organFinishCount >= organList.Count)
         {
             winGame.SetActive(true);
+
+            SoundManager.Instance.PlaySfx("Victory");
         }
     }
 

@@ -69,6 +69,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 174c909de3e4f8f42921562de9ac295f, type: 3}
   - Name: Close3
     clip: {fileID: 8300000, guid: f577d1cc110fd284a86ff99cc514ae93, type: 3}
+  - Name: Victory
+    clip: {fileID: 8300000, guid: 7b4005433151620418faebf03f77c818, type: 3}
   musicSource: {fileID: 8382515132175506214}
   sfxSource: {fileID: 946049778815586010}
   ambient: {fileID: 4245115953288719129}
