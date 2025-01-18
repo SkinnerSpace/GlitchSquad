@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -29,17 +30,22 @@ public class Player : MonoBehaviour
         // Create a movement vector
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
 
-        Debug.Log(movement);
-
         // Apply force to the rigidbody for movement
         rb.AddForce(movement * moveSpeed);
 
         // Prevent angular motion
-        rb.angularVelocity = 0f;
+        /*rb.angularVelocity = 0f;*/
 
+
+    }
+
+    private void LateUpdate()
+    {
         float force = Mathf.InverseLerp(0f, maxVelocityMagnitude, rb.velocity.magnitude);
 
-        bigCircle.localScale = Vector2.one * Mathf.Clamp(0.8f, 1f, force);
+        var scale = Vector2.one * Mathf.Clamp(force, 0.75f, 1f);
+
+        bigCircle.localScale = Vector2.Lerp(bigCircle.localScale, scale, Time.deltaTime * 2f);
     }
 
     /*void Update()
@@ -60,7 +66,7 @@ public class Player : MonoBehaviour
         Debug.Log(rb.velocity.magnitude + " magnitude " + velocityPower);
     }*/
 
-    void OnCollisionEnter2D(Collision2D collision)
+    /*void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Environment"))
         {
@@ -71,5 +77,5 @@ public class Player : MonoBehaviour
 
             rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
         }
-    }
+    }*/
 }
