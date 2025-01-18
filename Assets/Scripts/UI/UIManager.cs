@@ -6,10 +6,13 @@ public class UIManager : MonoBehaviour
 {
     private List<GameObject> healthBarList = new List<GameObject>();  
     [SerializeField] private GameObject healthBarPrefab;              
-    public List<Organ> organList = new List<Organ>();                
+    public List<Organ> organList = new List<Organ>();
+    public int organFinishCount;
+    public GameObject winGame;
 
     private void Start()
     {
+        organFinishCount = 0;
         GameObject[] organObjects = GameObject.FindGameObjectsWithTag("Organ");
 
         organList.Clear();
@@ -19,11 +22,21 @@ public class UIManager : MonoBehaviour
             Organ organComponent = organObject.GetComponent<Organ>();
             if (organComponent != null)
             {
-                organList.Add(organComponent);  
+                organList.Add(organComponent);
+                organComponent.OnMaxHealthReached += HandleOrganMaxHealthReached;
             }
         }
 
         UpdateUI(organList);
+    }
+
+    private void HandleOrganMaxHealthReached(Organ organ)
+    {
+        organFinishCount++;
+        if (organFinishCount >= organList.Count)
+        {
+            winGame.SetActive(true);
+        }
     }
 
     private void UpdateUI(List<Organ> organs)
