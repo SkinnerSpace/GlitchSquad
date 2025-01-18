@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Organ : MonoBehaviour
 {
-    [SerializeField] private int currentHealth;
-    [SerializeField] private int maxHealth;
+    public int currentHealth;
+    public int maxHealth;
     [SerializeField] private float consumeTimeStep;
 
     private float lastConsumeTime;
+
 
     private void OnTriggerStay2D(Collider2D other)
     {
