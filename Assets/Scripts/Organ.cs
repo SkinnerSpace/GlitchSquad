@@ -1,3 +1,4 @@
+using System;
 using Bubbles;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Organ : MonoBehaviour
     [SerializeField] private float consumeTimeStep;
 
     private float lastConsumeTime;
+    private float lastInteractionTime;
 
     public Animator animator;
 
@@ -16,6 +18,17 @@ public class Organ : MonoBehaviour
 
     public delegate void MaxHealthReachedHandler(Organ organ);
     public event MaxHealthReachedHandler OnMaxHealthReached;
+    public event Action OnInteractionTriggered;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        bool timeHasPassed = Time.time > lastInteractionTime + 15;
+        if (timeHasPassed)
+        {
+            OnInteractionTriggered?.Invoke();
+            lastInteractionTime = Time.time;
+        }
+    }
 
     private void OnTriggerStay2D(Collider2D other)
     {
