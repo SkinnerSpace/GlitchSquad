@@ -51,9 +51,15 @@ MonoBehaviour:
   sfxSounds:
   - Name: MenuClick
     clip: {fileID: 8300000, guid: a88fe46d94de726499faebb3565db873, type: 3}
+  - Name: Action1
+    clip: {fileID: 8300000, guid: f901314a6b0522341bd2f1f01d7706ad, type: 3}
+  - Name: Action2
+    clip: {fileID: 8300000, guid: 57f9406cfde0013449d3285ebb1576f6, type: 3}
+  - Name: Action3
+    clip: {fileID: 8300000, guid: 3b407d9f2f0acd24db1274eda3cbbdca, type: 3}
   musicSource: {fileID: 8382515132175506214}
   sfxSource: {fileID: 946049778815586010}
-  ambient: {fileID: 0}
+  ambient: {fileID: 4245115953288719129}
 --- !u!1 &6067726747601644028
 GameObject:
   m_ObjectHideFlags: 0

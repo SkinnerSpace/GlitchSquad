@@ -29,13 +29,16 @@ namespace Bubbles
             tail.transform.SetParent(null);
         }
 
-        public bool TryConsumeLastBubble()
+        public bool TryConsumeLastBubble(Animator animator)
         {
             Bubble lastBubble = _bubbles.LastOrDefault();
             if (lastBubble != null)
             {
                 _bubbles.Remove(lastBubble);
                 lastBubble.Consume();
+
+                animator.Play("Breathing");
+
                 return true;
             }
 

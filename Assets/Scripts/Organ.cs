@@ -10,6 +10,8 @@ public class Organ : MonoBehaviour
 
     private float lastConsumeTime;
 
+    public Animator animator;
+
     public float HealthRatio => (float) currentHealth / maxHealth;
 
     public delegate void MaxHealthReachedHandler(Organ organ);
@@ -20,7 +22,7 @@ public class Organ : MonoBehaviour
         bool timeHasPassed = Time.time > lastConsumeTime + consumeTimeStep;
         bool hasBubbles = other.TryGetComponent(out BubblesRoot bubblesRoot);
         bool healthNotMax = currentHealth < maxHealth;
-        if (healthNotMax && timeHasPassed && hasBubbles && bubblesRoot.TryConsumeLastBubble())
+        if (healthNotMax && timeHasPassed && hasBubbles && bubblesRoot.TryConsumeLastBubble(animator))
         {
             currentHealth++;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);

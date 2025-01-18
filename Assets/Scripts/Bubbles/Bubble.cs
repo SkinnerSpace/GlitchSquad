@@ -88,6 +88,10 @@ namespace Bubbles
             IsConnected = false;
             _target = null;
             _index = -1;
+
+            string[] fxs = new[] { "Breathe1", "Breathe2", "Breathe3" };
+
+            SoundManager.Instance.PlaySfx(fxs[Random.Range(0, fxs.Length)]);
         }
 
         public void Update()
