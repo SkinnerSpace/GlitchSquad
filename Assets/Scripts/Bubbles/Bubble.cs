@@ -25,6 +25,7 @@ namespace Bubbles
             IsConnected = false;
             target = null;
             index = -1;
+            gameObject.SetActive(false);
         }
 
         public void Update()

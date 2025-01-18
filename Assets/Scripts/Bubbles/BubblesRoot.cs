@@ -17,14 +17,17 @@ namespace Bubbles
 
         private readonly List<Bubble> _bubbles = new();
 
-        public void ConsumeLastBubble()
+        public bool TryConsumeLastBubble()
         {
             Bubble lastBubble = _bubbles.LastOrDefault();
             if (lastBubble != null)
             {
                 _bubbles.Remove(lastBubble);
                 lastBubble.Disconnect();
+                return true;
             }
+
+            return false;
         }
 
         public void OnTriggerEnter2D(Collider2D other)
