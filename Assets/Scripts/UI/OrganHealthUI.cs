@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class OrganHealthUI : MonoBehaviour
 {
+    [SerializeField] private GameObject inactiveUpgrade;
+    [SerializeField] private GameObject activeUpgrade;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image organImg;
     [SerializeField] private List<Sprite> organSpriteList;
@@ -37,5 +39,7 @@ public class OrganHealthUI : MonoBehaviour
         {
             healthSlider.value = organ.currentHealth;
         }
+        activeUpgrade.SetActive(organ.HealthRatio >= 1f);
+        inactiveUpgrade.SetActive(organ.HealthRatio < 1);
     }
 }

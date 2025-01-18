@@ -3393,6 +3393,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 683085990004049652, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
+      propertyPath: fullSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 474bbdf779452564f9df67f6e8ba0ddf, type: 3}
+    - target: {fileID: 683085990004049652, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
+      propertyPath: firstMeetSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 474bbdf779452564f9df67f6e8ba0ddf, type: 3}
+    - target: {fileID: 2746562947943047208, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746562947943047208, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3863761576860136258, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
       propertyPath: m_Name
       value: Stomach
@@ -3441,6 +3457,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5667602684497308507, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485561457550029119, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e2c9f5197fc6f85419b5d7a4cd9d90b2, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5009,6 +5033,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2069075334755580630, guid: a415874720a18ce4aa8b65d93ebebbee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2069075334755580630, guid: a415874720a18ce4aa8b65d93ebebbee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126279600939672784, guid: a415874720a18ce4aa8b65d93ebebbee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4695547058705960864, guid: a415874720a18ce4aa8b65d93ebebbee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.91
@@ -5114,6 +5150,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6966016624011978966, guid: d410e642083dc9e448d1be2a01b572b1, type: 3}
+      propertyPath: fullSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 992517e01b3f36041baf8cae4b7b5152, type: 3}
+    - target: {fileID: 6966016624011978966, guid: d410e642083dc9e448d1be2a01b572b1, type: 3}
+      propertyPath: firstMeetSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 64a15c2239726e64a92777e1bf7eae27, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5265,6 +5309,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 968586346675057756, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 968586346675057756, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722364889911203985, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2948918113398356169, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.43
@@ -5308,6 +5364,18 @@ PrefabInstance:
     - target: {fileID: 5686238387341187499, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
       propertyPath: m_Name
       value: Lungs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069680413076253935, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7069680413076253935, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7973726515214426730, guid: f6d01c58dabf5bf4ba7d82e01f431513, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
