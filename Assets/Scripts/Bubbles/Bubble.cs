@@ -1,9 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Bubbles
 {
     public class Bubble : MonoBehaviour
     {
+        [SerializeField]
+        private SpriteRenderer spriteRenderer;
+
+        [SerializeField]
+        private List<Sprite> sprites;
+
         [SerializeField]
         private float followSpeed;
 
@@ -13,6 +20,14 @@ namespace Bubbles
         public int Index => index;
         public bool IsConnected { get; private set; }
 
+        private void Start()
+        {
+            if (sprites.Count > 0)
+            {
+                spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count - 1)];
+            }
+        }
+
         public void Connect(TrailRenderer trailRenderer, int followIndex)
         {
             IsConnected = true;
@@ -20,12 +35,12 @@ namespace Bubbles
             index = followIndex;
         }
 
-        public void Disconnect()
+        public void Consume()
         {
+            gameObject.SetActive(false);
             IsConnected = false;
             target = null;
             index = -1;
-            gameObject.SetActive(false);
         }
 
         public void Update()

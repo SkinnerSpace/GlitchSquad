@@ -106,6 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c046b96b45cd641bc6e4d7150b814c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xClamp: {x: -5.5, y: 5.5}
+  yClamp: {x: -3.5, y: 3.5}
+  smoothEdgeThreshold: 2
   movementSpeed: 2.5
   cameraTransform: {fileID: 2052955299905081108}
   target: {fileID: 0}

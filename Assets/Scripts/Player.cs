@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         Debug.Log(rb.velocity.magnitude + " magnitude " + velocityPower);
     }*/
 
-    /*void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Environment"))
         {
@@ -77,5 +77,5 @@ public class Player : MonoBehaviour
 
             rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
         }
-    }*/
+    }
 }

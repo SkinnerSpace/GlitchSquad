@@ -15,6 +15,9 @@ namespace Bubbles
         [SerializeField]
         private int indexOffset;
 
+        [SerializeField]
+        private int maxCount;
+
         private readonly List<Bubble> _bubbles = new();
 
         private void Start()
@@ -29,7 +32,7 @@ namespace Bubbles
             if (lastBubble != null)
             {
                 _bubbles.Remove(lastBubble);
-                lastBubble.Disconnect();
+                lastBubble.Consume();
                 return true;
             }
 
@@ -38,7 +41,7 @@ namespace Bubbles
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.TryGetComponent(out Bubble bubble) && !bubble.IsConnected)
+            if (_bubbles.Count < maxCount && other.TryGetComponent(out Bubble bubble) && !bubble.IsConnected)
             {
                 Bubble lastBubble = _bubbles.LastOrDefault();
                 bubble.Connect(trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
