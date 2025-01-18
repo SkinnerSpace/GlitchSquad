@@ -43,6 +43,15 @@ namespace Bubbles
             {
                 spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count - 1)];
             }
+
+            if (BubblesManager.Manager.bubbles.Contains(this))
+            {
+                return;
+            }
+
+            BubblesManager.Manager.positions.Add(transform.position);
+
+            BubblesManager.Manager.bubbles.Add(this);
         }
 
         public void Respawn(Vector2 position)
@@ -58,14 +67,7 @@ namespace Bubbles
 
         private void Awake()
         {
-            if (BubblesManager.Manager.bubbles.Contains(this))
-            {
-                return;
-            }
 
-            BubblesManager.Manager.positions.Add(transform.position);
-
-            BubblesManager.Manager.bubbles.Add(this);
         }
 
         public void Connect(BubblesRoot root, TrailRenderer trailRenderer, int followIndex)
@@ -74,6 +76,10 @@ namespace Bubbles
             _target = trailRenderer;
             _index = followIndex;
             _root = root;
+
+            string[] fxs = new[] { "Action1", "Action2", "Action3" };
+
+            SoundManager.Instance.PlaySfx(fxs[Random.Range(0, fxs.Length)]);
         }
 
         public void Consume()
@@ -82,6 +88,10 @@ namespace Bubbles
             IsConnected = false;
             _target = null;
             _index = -1;
+
+            string[] fxs = new[] { "Breathe1", "Breathe2", "Breathe3" };
+
+            SoundManager.Instance.PlaySfx(fxs[Random.Range(0, fxs.Length)]);
         }
 
         public void Update()

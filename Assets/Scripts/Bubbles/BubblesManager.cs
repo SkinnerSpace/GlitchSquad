@@ -9,7 +9,7 @@ public class BubblesManager : MonoBehaviour
 
     public List<BubbleSpawner> spawners;
 
-    public List<Bubble> bubbles;
+    public List<Bubble> bubbles = new();
 
     public List<Vector2> positions;
 

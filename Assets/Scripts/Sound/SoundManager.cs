@@ -8,6 +8,8 @@ public class SoundManager : MonoBehaviour
     public SoundSource[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
 
+    public AudioSource ambient;
+
     private void Awake()
     {
         if (Instance == null)
@@ -19,6 +21,11 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        /*if (ambient != null)
+        {
+            ambient.Play();
+        }*/
     }
 
     private void Start()
@@ -40,7 +47,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySfx(string name)
+    public void PlaySfx(string name, float volume = 1f)
     {
         SoundSource s = Array.Find(sfxSounds, x => x.Name == name);
         if (s == null)
@@ -49,6 +56,8 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
+            sfxSource.volume = volume;
+
             sfxSource.PlayOneShot(s.clip);
         }
     }

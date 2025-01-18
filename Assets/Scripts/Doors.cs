@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Doors : MonoBehaviour
 {
@@ -42,6 +43,13 @@ public class Doors : MonoBehaviour
 
     private bool isRed = true;
 
+    private string[] fxs;
+
+    private void Awake()
+    {
+        fxs = new[] { "Close1", "Close2", "Close3" };
+    }
+
     private void Update()
     {
         if (time > 0f)
@@ -79,6 +87,12 @@ public class Doors : MonoBehaviour
 
                     openedDoors.SetActive(false);
                     closedDoors.SetActive(true);
+
+                    float distance = Vector2.Distance(transform.position, Camera.main.transform.position);
+
+                    float volume = 1f - Mathf.InverseLerp(0f, 6.5f, distance);
+
+                    SoundManager.Instance.PlaySfx(fxs[Random.Range(0, fxs.Length)], volume);
                 }
                 else
                 {
