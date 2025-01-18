@@ -252,8 +252,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5513769201024598479}
-  - component: {fileID: 255294780407383398}
   - component: {fileID: 5027199960527364832}
+  - component: {fileID: 255294780407383398}
   m_Layer: 0
   m_Name: Stomach
   m_TagString: Organ
@@ -278,6 +278,22 @@ Transform:
   - {fileID: 5357178664062417055}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5027199960527364832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863761576860136258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facbe05f04e69da41b389e0119ed7e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  organType: 2
+  currentHealth: 0
+  maxHealth: 12
+  consumeTimeStep: 0.5
 --- !u!60 &255294780407383398
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -405,19 +421,3 @@ PolygonCollider2D:
       - {x: -0.87, y: -1.895}
       - {x: -0.82, y: -1.805}
   m_UseDelaunayMesh: 0
---- !u!114 &5027199960527364832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3863761576860136258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: facbe05f04e69da41b389e0119ed7e86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  organType: 2
-  currentHealth: 0
-  maxHealth: 12
-  consumeTimeStep: 0.5
