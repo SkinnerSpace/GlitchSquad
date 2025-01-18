@@ -1773,6 +1773,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6762532465586791495, guid: 8bee6c39cb4f5f14fa34bb82c057955d, type: 3}
   m_PrefabInstance: {fileID: 765465673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &785421833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 785421835}
+  - component: {fileID: 785421834}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &785421834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785421833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781fd1684cfbcc3498b785caf97d9183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeInterval: 15
+  spawners: []
+  bubbles: []
+  positions: []
+--- !u!4 &785421835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785421833}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &819239833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,6 +1830,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819239834}
+  - component: {fileID: 819239835}
   m_Layer: 0
   m_Name: Bubbles
   m_TagString: Untagged
@@ -1825,6 +1874,22 @@ Transform:
   - {fileID: 2118922729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &819239835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819239833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781fd1684cfbcc3498b785caf97d9183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnTimeInterval: 15
+  spawners: []
+  bubbles: []
+  positions: []
 --- !u!1001 &837495964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1984,7 +2049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513769201024598479, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5513769201024598479, guid: 06a3d5c77b9825f4786efb1f56c384f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3522,7 +3587,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5513769201024598479, guid: d410e642083dc9e448d1be2a01b572b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 5513769201024598479, guid: d410e642083dc9e448d1be2a01b572b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3751,3 +3816,4 @@ SceneRoots:
   - {fileID: 1529100487}
   - {fileID: 1065810422}
   - {fileID: 8805907934504148924}
+  - {fileID: 785421835}

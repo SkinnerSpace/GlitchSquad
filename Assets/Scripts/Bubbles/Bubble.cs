@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -21,6 +23,8 @@ namespace Bubbles
         [SerializeField]
         private float followSpeed;
 
+        public static List<Bubble> allBubbles;
+
         private TrailRenderer _target;
         private int _index;
         private Vector3 initPosition;
@@ -37,6 +41,28 @@ namespace Bubbles
             {
                 spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count - 1)];
             }
+        }
+
+        public void Respawn(Vector2 position)
+        {
+            transform.position = position;
+
+            gameObject.SetActive(true);
+            IsConnected = false;
+            _target = null;
+            _index = -1;
+        }
+
+        private void Awake()
+        {
+            if (BubblesManager.Manager.bubbles.Contains(this))
+            {
+                return;
+            }
+
+            BubblesManager.Manager.positions.Add(transform.position);
+
+            BubblesManager.Manager.bubbles.Add(this);
         }
 
         public void Connect(TrailRenderer trailRenderer, int followIndex)
