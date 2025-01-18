@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d4c4d9e127e51b4b85a08c0975b11f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fader: {fileID: 0}
 --- !u!4 &149669058
 Transform:
   m_ObjectHideFlags: 0
@@ -1105,10 +1106,6 @@ PrefabInstance:
     - target: {fileID: 7936106194922410190, guid: e1da4392081253f43a505e78207639d9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8382515132175506214, guid: e1da4392081253f43a505e78207639d9, type: 3}
-      propertyPath: m_audioClip
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
