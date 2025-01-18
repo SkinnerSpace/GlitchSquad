@@ -22,6 +22,8 @@ public class BubblesManager : MonoBehaviour
     private void OnEnable()
     {
         Manager = this;
+
+        bubbles = new List<Bubble>();
     }
 
     private void Update()
