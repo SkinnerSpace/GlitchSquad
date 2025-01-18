@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using Bubbles;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class DoorSolidTrigger : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D other)
+    public Transform pivotPoint;
+    public Transform thrustPoint;
+
+    void OnTriggerEnter2D(Collider2D other)
     {
-
-
-        /*if (other.gameObject.CompareTag("Bubble"))
+        if (other.TryGetComponent(out Bubble bubble) && bubble.IsConnected)
         {
-            other.gameObject.GetComponent<Bubble>().Pop();
-        }*/
+            bubble.Disconnect();
+        }
     }
 }

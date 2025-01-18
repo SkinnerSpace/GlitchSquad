@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    private List<GameObject> healthBarList = new List<GameObject>();  
-    [SerializeField] private GameObject healthBarPrefab;              
+    private List<GameObject> healthBarList = new List<GameObject>();
+    [SerializeField] private GameObject healthBarPrefab;
     public List<Organ> organList = new List<Organ>();
     public int organFinishCount;
     public GameObject winGame;
@@ -38,6 +38,16 @@ public class UIManager : MonoBehaviour
             winGame.SetActive(true);
 
             SoundManager.Instance.PlaySfx("Victory");
+
+            StartCoroutine(Finish());
+
+            IEnumerator Finish()
+            {
+                yield return new WaitForSeconds(2f);
+                winGame.SetActive(true);
+                
+
+            }
         }
     }
 
@@ -55,9 +65,9 @@ public class UIManager : MonoBehaviour
             OrganHealthUI healthUI = newHealthBar.GetComponent<OrganHealthUI>();
             if (healthUI != null)
             {
-                healthUI.SetOrgan(organ);  
+                healthUI.SetOrgan(organ);
             }
-            healthBarList.Add(newHealthBar); 
+            healthBarList.Add(newHealthBar);
         }
     }
 

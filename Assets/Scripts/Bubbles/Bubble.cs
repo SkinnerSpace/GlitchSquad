@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -23,6 +21,7 @@ namespace Bubbles
         [SerializeField]
         private float followSpeed;
 
+        private BubblesRoot _root;
         public static List<Bubble> allBubbles;
 
         private TrailRenderer _target;
@@ -30,6 +29,7 @@ namespace Bubbles
         private Vector3 _initPosition;
         private Vector3 _targetPosition;
         private Vector3 _pushDirection;
+        private bool _hasBeenConnected;
 
         public int Index => _index;
         public bool IsConnected { get; private set; }
@@ -44,8 +44,6 @@ namespace Bubbles
                 spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count - 1)];
             }
 
-            BubblesManager.Manager.bubbles ??= new List<Bubble>();
-
             if (BubblesManager.Manager.bubbles.Contains(this))
             {
                 return;
@@ -59,7 +57,8 @@ namespace Bubbles
         public void Respawn(Vector2 position)
         {
             transform.position = position;
-
+            _initPosition = position;
+            _targetPosition = position;
             gameObject.SetActive(true);
             IsConnected = false;
             _target = null;
@@ -71,11 +70,12 @@ namespace Bubbles
 
         }
 
-        public void Connect(TrailRenderer trailRenderer, int followIndex)
+        public void Connect(BubblesRoot root, TrailRenderer trailRenderer, int followIndex)
         {
             IsConnected = true;
             _target = trailRenderer;
             _index = followIndex;
+            _root = root;
 
             string[] fxs = new[] { "Action1", "Action2", "Action3" };
 
@@ -137,8 +137,14 @@ namespace Bubbles
             _pushDirection = direction.normalized;
         }
 
-        public void Pop()
+        public void Disconnect()
         {
+            _initPosition = transform.position;
+            _targetPosition = transform.position;
+            IsConnected = false;
+            _target = null;
+            _index = -1;
+            _root.Disconnect(this);
         }
     }
 }

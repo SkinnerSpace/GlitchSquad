@@ -29,8 +29,6 @@ public class DoorsTrigger : MonoBehaviour
             {
                 other.gameObject.GetComponent<Player>().Thrust(thrustDir * -1 * thrustPower);
             }
-
-            return;
         }
     }
 }
