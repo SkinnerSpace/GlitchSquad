@@ -145,9 +145,10 @@ MonoBehaviour:
   healthSlider: {fileID: 223403543256049474}
   organImg: {fileID: 1829803613498075237}
   organSpriteList:
-  - {fileID: 21300000, guid: 62ca25f874a56994ca598ed1467b4d52, type: 3}
-  - {fileID: 21300000, guid: 3dd2ba4efc07dd846aa3ce1d47a36a7c, type: 3}
-  - {fileID: 21300000, guid: da4f29e215e17b042989a73cfb83618c, type: 3}
+  - {fileID: 21300000, guid: b2a2f8b7e426723499456ecef8d60ffa, type: 3}
+  - {fileID: 21300000, guid: dcd900f72a1b09f41b40af744a30f960, type: 3}
+  - {fileID: 21300000, guid: 6e53dd3bf9170fb4d8b17403a0791e4f, type: 3}
+  - {fileID: 21300000, guid: eb3a09fb0d39f2a49bb504ea704dbcf6, type: 3}
 --- !u!1 &5800998211950225232
 GameObject:
   m_ObjectHideFlags: 0

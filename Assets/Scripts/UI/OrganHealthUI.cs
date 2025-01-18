@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +24,9 @@ public class OrganHealthUI : MonoBehaviour
                 break;
             case OrganType.Stomach:
                 organImg.sprite = organSpriteList[2];
+                break;
+            case OrganType.Lungs:
+                organImg.sprite = organSpriteList[3];
                 break;
         }
     }
