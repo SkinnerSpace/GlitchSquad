@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 7514968390927329297}
   trail: {fileID: 2884363560735153123}
-  indexOffset: 1
+  indexOffset: 2
 --- !u!1 &5898830391059489696
 GameObject:
   m_ObjectHideFlags: 0
