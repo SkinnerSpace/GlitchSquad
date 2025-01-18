@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -51,15 +52,22 @@ namespace Bubbles
                     bubble.Connect(trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
                     _bubbles.Add(bubble);
                 }
-                else if(bubble != tail && !_bubbles.Contains(bubble))
-                {
-                    bubble.Push(bubble.transform.position - transform.position);
-                }
             }
 
             if (other.CompareTag("SolidDoors"))
             {
                 Debug.Log("-Pop");
+            }
+        }
+
+        public void OnTriggerStay2D(Collider2D other)
+        {
+            if (other.TryGetComponent(out Bubble bubble) && !bubble.IsConnected)
+            {
+                if(IsFull && bubble != tail && !_bubbles.Contains(bubble))
+                {
+                    bubble.Push(bubble.transform.position - transform.position);
+                }
             }
         }
     }

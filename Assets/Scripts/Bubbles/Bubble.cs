@@ -23,16 +23,18 @@ namespace Bubbles
 
         private TrailRenderer _target;
         private int _index;
-        private Vector3 initPosition;
-        private Vector3 pushDirection;
-        private Vector3 targetPosition;
+        private Vector3 _initPosition;
+        private Vector3 _targetPosition;
+        private Vector3 _pushDirection;
 
         public int Index => _index;
         public bool IsConnected { get; private set; }
 
         private void Start()
         {
-            initPosition = transform.position;
+            _initPosition = transform.position;
+            _targetPosition = _initPosition;
+
             if (sprites.Count > 0)
             {
                 spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count - 1)];
@@ -68,22 +70,22 @@ namespace Bubbles
                 return;
             }
 
-            if (pushDirection != Vector3.zero)
+            if (_pushDirection != Vector3.zero)
             {
-                targetPosition = initPosition + pushDirection.normalized * pushDistance;
-                pushDirection = Vector3.zero;
+                _targetPosition = _initPosition + _pushDirection.normalized * pushDistance;
+                _pushDirection = Vector3.zero;
             }
 
-            bool targetReached = Vector3.Distance(transform.position, targetPosition) < 0.1f;
+            bool targetReached = Vector3.Distance(transform.position, _targetPosition) < 0.2f;
 
             if (targetReached)
             {
-                targetPosition = initPosition;
+                _targetPosition = _initPosition;
             }
 
             if (!targetReached)
             {
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, pushSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, _targetPosition, pushSpeed * Time.deltaTime);
             }
         }
 
@@ -94,7 +96,7 @@ namespace Bubbles
                 return;
             }
 
-            pushDirection = direction.normalized;
+            _pushDirection = direction.normalized;
         }
 
         public void Pop()

@@ -292,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   organType: 2
   currentHealth: 0
-  maxHealth: 12
+  maxHealth: 7
   consumeTimeStep: 0.5
 --- !u!60 &255294780407383398
 PolygonCollider2D:
