@@ -9,6 +9,7 @@ public class DialogDisplay : MonoBehaviour
     [SerializeField] private SpriteRenderer dialogDisplay;
     [SerializeField] private Sprite fullSprite;
     [SerializeField] private Sprite[] firstMeetSprites;
+    [SerializeField] private Sprite[] consumptionSprites;
 
     private Player _player;
     private Organ _organ;
@@ -20,6 +21,17 @@ public class DialogDisplay : MonoBehaviour
         _player = FindObjectOfType<Player>();
         _organ = GetComponent<Organ>();
         _organ.OnMaxHealthReached += DisplayFull;
+        _organ.OnInteractionTriggered += DisplayConsumption;
+    }
+
+    private void DisplayConsumption()
+    {
+        if (consumptionSprites.Length > 0)
+        {
+            _lastDisplayTime = Time.time;
+            dialogDisplay.sprite = consumptionSprites[Random.Range(0, consumptionSprites.Length - 1)];
+            dialogDisplay.gameObject.SetActive(true);
+        }
     }
 
     private void DisplayFull(Organ organ)
