@@ -38,5 +38,7 @@ public enum OrganType
 {
     Heart,
     Liver,
-    Stomach
+    Stomach,
+    Lungs,
+
 }
