@@ -20,6 +20,8 @@ namespace Bubbles
 
         private readonly List<Bubble> _bubbles = new();
 
+        public bool IsFull => _bubbles.Count >= maxCount;
+
         private void Start()
         {
             tail.Connect(trail, 0);
@@ -41,11 +43,18 @@ namespace Bubbles
 
         public void OnTriggerEnter2D(Collider2D other)
         {
-            if (_bubbles.Count < maxCount && other.TryGetComponent(out Bubble bubble) && !bubble.IsConnected)
+            if (other.TryGetComponent(out Bubble bubble) && !bubble.IsConnected)
             {
-                Bubble lastBubble = _bubbles.LastOrDefault();
-                bubble.Connect(trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
-                _bubbles.Add(bubble);
+                if (!IsFull)
+                {
+                    Bubble lastBubble = _bubbles.LastOrDefault();
+                    bubble.Connect(trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
+                    _bubbles.Add(bubble);
+                }
+                else if(bubble != tail && !_bubbles.Contains(bubble))
+                {
+                    bubble.Push(bubble.transform.position - transform.position);
+                }
             }
 
             if (other.CompareTag("SolidDoors"))
