@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842776840834128799}
+  - component: {fileID: 9139245485165662792}
   - component: {fileID: 1145211308255372554}
   - component: {fileID: 2256947757490683537}
   - component: {fileID: 4200714269503239977}
-  - component: {fileID: 2425402567703977050}
   m_Layer: 0
-  m_Name: Mesh
+  m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,6 +35,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8808597222614124779}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.732}
+--- !u!114 &9139245485165662792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132861336565648315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67bace6c6eaf7354bbc7cc3c5f1be959, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideSmooth: 1
+  visual: {fileID: 842776840834128799}
+  hiddenPosition: {fileID: 7373020432981789081}
+  spriteRenderer: {fileID: 1145211308255372554}
+  sprites:
+  - {fileID: 21300000, guid: e8721f4748df9c644ab464a5b6b5638b, type: 3}
+  - {fileID: 21300000, guid: d3ea86a86efefd64bae608bf86c337b9, type: 3}
+  - {fileID: 21300000, guid: e1783f9b408e27246be56aa340804999, type: 3}
 --- !u!212 &1145211308255372554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -236,18 +256,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2425402567703977050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132861336565648315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67bace6c6eaf7354bbc7cc3c5f1be959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1190327680483657598
 GameObject:
   m_ObjectHideFlags: 0

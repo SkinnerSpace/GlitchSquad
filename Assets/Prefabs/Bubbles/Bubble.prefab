@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.05
-  color: {r: 1, g: 1, b: 1, a: 0}
+  color: {r: 0, g: 1, b: 0.90482306, a: 0.050980393}

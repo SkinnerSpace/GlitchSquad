@@ -9,12 +9,14 @@ public class Organ : MonoBehaviour
 
     private float lastConsumeTime;
 
+    public float HealthRatio => (float) currentHealth / maxHealth;
 
     private void OnTriggerStay2D(Collider2D other)
     {
         bool timeHasPassed = Time.time > lastConsumeTime + consumeTimeStep;
         bool hasBubbles = other.TryGetComponent(out BubblesRoot bubblesRoot);
-        if (timeHasPassed && hasBubbles && bubblesRoot.TryConsumeLastBubble())
+        bool healthNotMax = currentHealth < maxHealth;
+        if (healthNotMax && timeHasPassed && hasBubbles && bubblesRoot.TryConsumeLastBubble())
         {
             currentHealth++;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
