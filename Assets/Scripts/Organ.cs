@@ -12,6 +12,9 @@ public class Organ : MonoBehaviour
 
     public float HealthRatio => (float) currentHealth / maxHealth;
 
+    public delegate void MaxHealthReachedHandler(Organ organ);
+    public event MaxHealthReachedHandler OnMaxHealthReached;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         bool timeHasPassed = Time.time > lastConsumeTime + consumeTimeStep;
@@ -22,6 +25,11 @@ public class Organ : MonoBehaviour
             currentHealth++;
             currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
             lastConsumeTime = Time.time;
+
+            if (currentHealth == maxHealth)
+            {
+                OnMaxHealthReached?.Invoke(this);
+            }
         }
     }
 }

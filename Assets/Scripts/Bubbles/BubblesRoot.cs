@@ -56,6 +56,11 @@ namespace Bubbles
                     bubble.Push(bubble.transform.position - transform.position);
                 }
             }
+
+            if (other.CompareTag("SolidDoors"))
+            {
+                Debug.Log("-Pop");
+            }
         }
     }
 }

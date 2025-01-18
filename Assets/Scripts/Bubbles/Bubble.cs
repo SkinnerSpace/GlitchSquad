@@ -96,5 +96,9 @@ namespace Bubbles
 
             pushDirection = direction.normalized;
         }
+
+        public void Pop()
+        {
+        }
     }
 }
