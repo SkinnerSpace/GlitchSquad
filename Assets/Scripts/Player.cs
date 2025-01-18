@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float turnSpeed = 200f;
+    public float impactForce = 10f;
+    public float maxImpact = 4f;
 
     private Rigidbody2D rb;
 
@@ -16,14 +16,28 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        float moveInput = Input.GetAxis("Vertical"); // W/S or Arrow Up/Down
-        float turnInput = Input.GetAxis("Horizontal"); // A/D or Arrow Left/Right
+        float moveInput = Input.GetAxis("Vertical");
+        float turnInput = Input.GetAxis("Horizontal");
 
-        Vector2 moveDirection = transform.up * (moveInput * moveSpeed * Time.deltaTime);
-        rb.MovePosition(rb.position + moveDirection);
+        Vector2 moveDirection = transform.up * moveInput;
+
+        rb.AddForce(moveDirection * moveSpeed);
 
         float turnAmount = -turnInput * turnSpeed * Time.deltaTime;
+
         rb.MoveRotation(rb.rotation + turnAmount);
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Environment"))
+        {
+            ContactPoint2D contact = collision.contacts[0];
+            Vector2 pushDirection = contact.normal;
+
+            float pushForce = Mathf.Clamp(rb.velocity.magnitude * impactForce, 0f, maxImpact);
+
+            rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
+        }
+    }
 }
