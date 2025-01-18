@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8599d046084e44bbb8fc78982054df99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushDistance: 0.5
+  pushSpeed: 1
   spriteRenderer: {fileID: 1206674996525838827}
   sprites:
   - {fileID: 21300000, guid: a40e93ed5b39e2449913cbb057c22dd8, type: 3}
