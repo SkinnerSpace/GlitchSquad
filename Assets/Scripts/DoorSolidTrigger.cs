@@ -10,9 +10,9 @@ public class DoorSolidTrigger : MonoBehaviour
     {
 
 
-        if (other.gameObject.CompareTag("Bubble"))
+        /*if (other.gameObject.CompareTag("Bubble"))
         {
             other.gameObject.GetComponent<Bubble>().Pop();
-        }
+        }*/
     }
 }

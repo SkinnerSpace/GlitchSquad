@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 7041544718406956749}
   - component: {fileID: 2063187805125740205}
   - component: {fileID: 22915892483767800}
+  - component: {fileID: 7222750791443296851}
   m_Layer: 0
   m_Name: SolidCollider
   m_TagString: SolidDoors
@@ -406,6 +407,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7222750791443296851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6216001358088796853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 091bb92ea75a39247accfa136abc1ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6476699770153296053
 GameObject:
   m_ObjectHideFlags: 0

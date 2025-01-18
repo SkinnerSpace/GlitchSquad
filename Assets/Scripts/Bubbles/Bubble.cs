@@ -55,9 +55,6 @@ namespace Bubbles
 
         public void Pop()
         {
-            Debug.Log("-Pop");
-
-            Destroy(gameObject);
         }
     }
 }

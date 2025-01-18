@@ -47,6 +47,11 @@ namespace Bubbles
                 bubble.Connect(trail, lastBubble ? lastBubble.Index + indexOffset : indexOffset);
                 _bubbles.Add(bubble);
             }
+
+            if (other.CompareTag("SolidDoors"))
+            {
+                Debug.Log("-Pop");
+            }
         }
     }
 }
