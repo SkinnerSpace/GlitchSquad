@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Transform smallCircle;
     public Transform bigCircle;
+    public Transform smallCircle;
+    public Transform middleCircle;
 
     public float moveSpeed = 5f;
     public float turnSpeed = 200f;
     public float impactForce = 10f;
     public float maxImpact = 4f;
     public float maxVelocityMagnitude = 5f;
+
 
     private Rigidbody2D rb;
 
@@ -34,6 +36,10 @@ public class Player : MonoBehaviour
 
         // Prevent angular motion
         rb.angularVelocity = 0f;
+
+        float force = Mathf.InverseLerp(0f, maxVelocityMagnitude, rb.velocity.magnitude);
+
+        bigCircle.localScale = Vector2.one * Mathf.Clamp(0.8f, 1f, force);
     }
 
     /*void Update()
