@@ -52,5 +52,12 @@ namespace Bubbles
                 transform.position = Vector3.Lerp(transform.position, nextPosition, Time.deltaTime * followSpeed);
             }
         }
+
+        public void Pop()
+        {
+            Debug.Log("-Pop");
+
+            Destroy(gameObject);
+        }
     }
 }

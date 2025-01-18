@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Environment
   - Organ
+  - Doors
+  - SolidDoors
+  - Bubble
   layers:
   - Default
   - TransparentFX

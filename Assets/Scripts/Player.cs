@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -84,5 +85,11 @@ public class Player : MonoBehaviour
 
             rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
         }
+    }
+
+    public void Thrust(Vector2 thrustVector)
+    {
+        rb.AddForce(thrustVector);
+
     }
 }
