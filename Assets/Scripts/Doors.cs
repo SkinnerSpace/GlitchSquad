@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -45,9 +46,18 @@ public class Doors : MonoBehaviour
 
     private string[] fxs;
 
-    private void Awake()
+    public static List<Doors> DoorsList;
+
+    public static bool isPlating;
+
+
+    private void OnEnable()
     {
         fxs = new[] { "Close1", "Close2", "Close3" };
+
+        DoorsList ??= new List<Doors>();
+
+        DoorsList.Add(this);
     }
 
     private void Update()
@@ -71,6 +81,8 @@ public class Doors : MonoBehaviour
                 redDoors.SetActive(true);
                 yellowDoors.SetActive(false);
 
+                isPlating = false;
+
                 break;
             case States.Closing:
 
@@ -88,11 +100,23 @@ public class Doors : MonoBehaviour
                     openedDoors.SetActive(false);
                     closedDoors.SetActive(true);
 
-                    float distance = Vector2.Distance(transform.position, Camera.main.transform.position);
+                    if (!isPlating)
+                    {
+                        isPlating = true;
 
-                    float volume = 1f - Mathf.InverseLerp(0f, 6.5f, distance);
+                        DoorsList = DoorsList.Where(door => door != null).ToList();
 
-                    SoundManager.Instance.PlaySfx(fxs[Random.Range(0, fxs.Length)], volume);
+                        var closestDoor = DoorsList.OrderByDescending(door =>
+                            Vector2.Distance(GetFlatPos(door.transform.position),
+                                GetFlatPos(Camera.main.transform.position))).LastOrDefault();
+
+                        float distance = Vector2.Distance(GetFlatPos(closestDoor.transform.position),
+                            GetFlatPos(Camera.main.transform.position));
+
+                        float volume = 1f - Mathf.InverseLerp(0f, 5f, distance) * 0.8f;
+
+                        SoundManager.Instance.PlaySfx(fxs[Random.Range(0, fxs.Length)], volume);
+                    }
                 }
                 else
                 {
@@ -127,5 +151,10 @@ public class Doors : MonoBehaviour
                 yellowDoors.SetActive(false);
                 break;
         }
+    }
+
+    private Vector3 GetFlatPos(Vector3 pos)
+    {
+        return new Vector3(pos.x, pos.x, 0f);
     }
 }
