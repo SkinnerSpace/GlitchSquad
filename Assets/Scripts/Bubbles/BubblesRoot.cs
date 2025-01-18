@@ -7,7 +7,7 @@ namespace Bubbles
     public class BubblesRoot : MonoBehaviour
     {
         [SerializeField]
-        private Rigidbody2D root;
+        private Bubble tail;
 
         [SerializeField]
         private TrailRenderer trail;
@@ -16,6 +16,12 @@ namespace Bubbles
         private int indexOffset;
 
         private readonly List<Bubble> _bubbles = new();
+
+        private void Start()
+        {
+            tail.Connect(trail, 0);
+            tail.transform.SetParent(null);
+        }
 
         public bool TryConsumeLastBubble()
         {

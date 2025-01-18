@@ -43,9 +43,9 @@ public class Player : MonoBehaviour
     {
         float force = Mathf.InverseLerp(0f, maxVelocityMagnitude, rb.velocity.magnitude);
 
-        var scale = Vector2.one * Mathf.Clamp(force, 0.75f, 1f);
-
-        bigCircle.localScale = Vector2.Lerp(bigCircle.localScale, scale, Time.deltaTime * 2f);
+        // var scale = Vector2.one * Mathf.Clamp(force, 0.75f, 1f);
+        //
+        // bigCircle.localScale = Vector2.Lerp(bigCircle.localScale, scale, Time.deltaTime * 2f);
     }
 
     /*void Update()
