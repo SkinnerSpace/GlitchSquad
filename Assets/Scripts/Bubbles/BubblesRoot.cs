@@ -28,6 +28,11 @@ namespace Bubbles
             tail.transform.SetParent(null);
         }
 
+        public void UpgradeMaxCount(int newMaxCount)
+        {
+            maxCount = newMaxCount;
+        }
+
         public bool TryConsumeLastBubble(Animator animator)
         {
             Bubble lastBubble = _bubbles.LastOrDefault();

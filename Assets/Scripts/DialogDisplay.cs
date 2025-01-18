@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -35,6 +35,16 @@ public class DialogDisplay : MonoBehaviour
         dialogDisplay.sprite = firstMeetSprites[Random.Range(0, firstMeetSprites.Length - 1)];
         dialogDisplay.gameObject.SetActive(true);
         _meetDisplayed = true;
+
+        if(firstMeetSprites.Length > 1)
+        {
+            StartCoroutine(ResetMeet());
+            IEnumerator ResetMeet()
+            {
+                yield return new WaitForSeconds(15);
+                _meetDisplayed = false;
+            }
+        }
     }
 
     private void Update()
