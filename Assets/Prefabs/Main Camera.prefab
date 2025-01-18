@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c046b96b45cd641bc6e4d7150b814c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDelay: 1
   xClamp: {x: -6.3, y: 6.3}
   yClamp: {x: -8, y: 5}
   smoothEdgeThreshold: 2

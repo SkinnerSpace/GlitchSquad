@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    public float moveDelay;
+
     public Vector2 xClamp;
 
     public Vector2 yClamp;
@@ -16,6 +18,11 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        moveDelay -= Time.deltaTime;
+        if (moveDelay > 0)
+        {
+            return;
+        }
         // Текущее положение камеры
         Vector2 currentPos = cameraTransform.localPosition;
 
