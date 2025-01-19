@@ -81,7 +81,7 @@ MonoBehaviour:
   bigCircle: {fileID: 2247263445837901335}
   smallCircle: {fileID: 0}
   middleCircle: {fileID: 0}
-  moveSpeed: 6
+  moveSpeed: 8
   slowSpeed: 2
   turnSpeed: 800
   impactForce: 2
